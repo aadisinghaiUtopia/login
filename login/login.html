@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PDF to IBT Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+    }
+
+    .left {
+      flex: 1;
+      background: #fbfbf0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left img {
+      max-width: 70%;
+      height: auto;
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 400px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .form-container h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-container p {
+      margin-bottom: 2rem;
+      color: #444;
+    }
+
+    .form-group {
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group input[type="password"] {
+      margin-top: 0.5rem;
+    }
+
+    .remember-forgot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .remember-forgot a {
+      color: #7a4bd4;
+      text-decoration: none;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0.75rem;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+
+    .google-btn {
+      background: #f3f3f3;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .signup-text {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .signup-text a {
+      color: #7a4bd4;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .eye-icon {
+      position: absolute;
+      right: 1rem;
+      top: 57%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .password-wrapper {
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <img src="image.png" alt="PDF to IBT"/>
+    </div>
+    <div class="right">
+      <div class="form-container">
+        <h1>Welcome!</h1>
+        <p>Please enter your details</p>
+        <form>
+          <div class="form-group">
+            <input type="email" placeholder="Email" required />
+          </div>
+          <div class="form-group password-wrapper">
+            <input type="password" placeholder="Password" required />
+            <span class="eye-icon">👁️</span>
+          </div>
+          <div class="remember-forgot">
+            <label><input type="checkbox" /> Remember for 30 days</label>
+            <a href="#">Forgot password?</a>
+          </div>
+          <button class="btn" type="submit">Log In</button>
+          <button class="btn google-btn" type="button">
+            <img src="icons8-google.svg" alt="Google" width="20"/> Log In with Google
+          </button>
+        </form>
+        <div class="signup-text">
+          Don’t have an account? <a href="#">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
