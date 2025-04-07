@@ -4,6 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PDF to IBT Login</title>
+
+  <!-- Google Identity Services -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+    function handleCredentialResponse(response) {
+      console.log("Encoded JWT ID token: " + response.credential);
+      alert("Login successful! JWT:\n" + response.credential);
+      // Here you can send the token to your backend for verification
+    }
+
+    window.onload = function () {
+      google.accounts.id.initialize({
+        client_id: "424125265876-2399s197glvv5ub5pk012rlfq65ol8ss.apps.googleusercontent.com",
+        callback: handleCredentialResponse,
+        ux_mode: "popup"
+      });
+
+      google.accounts.id.renderButton(
+        document.getElementById("googleLoginBtn"),
+        {
+          theme: "outline",
+          size: "large",
+          type: "standard",
+          shape: "rectangular",
+          text: "signin_with"
+        }
+      );
+    };
+  </script>
+
   <style>
     * {
       margin: 0;
@@ -24,7 +54,7 @@
 
     .left {
       flex: 1;
-      background: #fbfbf0;
+      background: #fafafa;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -40,6 +70,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: rgb(255, 255, 228);
     }
 
     .form-container {
@@ -100,15 +131,6 @@
       margin-bottom: 1rem;
     }
 
-    .google-btn {
-      background: #f3f3f3;
-      color: black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
     .signup-text {
       margin-top: 1rem;
       font-size: 0.95rem;
@@ -131,6 +153,12 @@
     .password-wrapper {
       position: relative;
     }
+
+    #googleLoginBtn {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -140,7 +168,7 @@
     </div>
     <div class="right">
       <div class="form-container">
-        <h1>Welcome!</h1>
+        <h1>Welcome back!</h1>
         <p>Please enter your details</p>
         <form>
           <div class="form-group">
@@ -155,12 +183,13 @@
             <a href="#">Forgot password?</a>
           </div>
           <button class="btn" type="submit">Log In</button>
-          <button class="btn google-btn" type="button">
-            <img src="icons8-google.svg" alt="Google" width="20"/> Log In with Google
-          </button>
         </form>
+
+        <!-- Google Sign In -->
+        <div id="googleLoginBtn"></div>
+
         <div class="signup-text">
-          Don’t have an account? <a href="#">Sign Up</a>
+          Don’t have an account? <a href="signup1.html">Sign Up</a>
         </div>
       </div>
     </div>
