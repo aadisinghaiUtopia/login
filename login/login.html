@@ -159,6 +159,40 @@
       justify-content: center;
       margin-bottom: 1rem;
     }
+    .user-type-group {
+  margin-bottom: 1.5rem;
+}
+
+.user-type-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.user-type-options input[type="radio"] {
+  display: none;
+}
+
+.user-type-label {
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.user-type-options input[type="radio"]:checked + .user-type-label {
+  background-color: #4f46e5;
+  color: white;
+  border-color: #4f46e5;
+  transform: scale(1.03);
+}
   </style>
 </head>
 <body>
@@ -181,6 +215,16 @@
           <div class="remember-forgot">
             <label><input type="checkbox" /> Remember for 30 days</label>
             <a href="#">Forgot password?</a>
+          </div>
+          <div class="form-group user-type-group">
+            <label class="form-label">I am a:</label>
+            <div class="user-type-options">
+              <input type="radio" name="userType" id="student" value="student" required>
+              <label for="student" class="user-type-label">Student</label>
+          
+              <input type="radio" name="userType" id="professional" value="professional">
+              <label for="professional" class="user-type-label">Professional</label>
+            </div>
           </div>
           <button class="btn" type="submit">Log In</button>
         </form>
